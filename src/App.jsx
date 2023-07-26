@@ -1,11 +1,17 @@
 import React from 'react'
-import Quiz from './Quiz'
+import Quiz from './components/Quiz'
+import {Route, Routes} from 'react-router-dom'
+import StartQuiz from './components/StartQuiz'
 
 const App = () => {
 
   return (
     <>
-    <Quiz/>
+     
+    <Routes>
+       <Route path='/' element={<StartQuiz/>}/>
+       <Route path='/quiz' element={<Quiz/>}/>
+    </Routes>
     </>
   )
 }
