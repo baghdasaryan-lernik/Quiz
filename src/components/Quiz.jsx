@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import "./Quiz.css"
 
@@ -58,13 +58,16 @@ const Quiz = () => {
 
   ]
 
+    
+
     const check = (isCorrect) => {
           if(isCorrect) setScore(score + 1)
           if(question + 1 < questions.length) setQuestion(question  + 1)
           else setResult(true)
      
     }
- 
+
+
   return (
     <div className='container'> 
           {result ? <div className='table'><div className="header"><h3>You answered {score} of {questions.length} questions correctly</h3><h1>{100 / questions.length * score}%</h1></div><Link to='/'><button style={{width:200+"px"}}>Restart</button></Link></div> : <div className='table'><div className='header'>
