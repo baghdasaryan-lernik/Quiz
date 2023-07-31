@@ -7,6 +7,7 @@ const Quiz = () => {
     const [result, setResult] = useState(false)
     const [question, setQuestion] = useState(0)
     const [score, setScore] = useState(0)
+
     
 
     const questions = [
@@ -57,8 +58,7 @@ const Quiz = () => {
       }
 
   ]
-
-    
+ 
 
     const check = (isCorrect) => {
           if(isCorrect) setScore(score + 1)
@@ -70,9 +70,10 @@ const Quiz = () => {
 
   return (
     <div className='container'> 
-          {result ? <div className='table'><div className="header"><h3>You answered {score} of {questions.length} questions correctly in {time}s</h3><h1>{100 / questions.length * score}%</h1></div><Link to='/'><button style={{width:200+"px"}}>Restart</button></Link></div> : <div className='table'><div className='header'>
+          {result ? <div className='table'><div className="header"><h3>You answered {score} of {questions.length} questions correctly in {time}</h3><h1>{100 / questions.length * score}%</h1></div><Link to='/'><button style={{width:200+"px"}}>Restart</button></Link></div> : <div className='table'><div className='header'>
             <h3>{questions[question].text}</h3>
             </div>
+ 
             <button onClick={() => {check(questions[question].answers[0].isCorrect)}}>{questions[question].answers[0].answer}</button>
             <button onClick={() => {check(questions[question].answers[1].isCorrect)}}>{questions[question].answers[1].answer}</button>
             <button onClick={() => {check(questions[question].answers[2].isCorrect)}}>{questions[question].answers[2].answer}</button>
