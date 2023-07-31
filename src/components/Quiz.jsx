@@ -73,6 +73,7 @@ const Quiz = () => {
           {result ? <div className='table'><div className="header"><h3>You answered {score} of {questions.length} questions correctly</h3><h1>{100 / questions.length * score}%</h1></div><Link to='/'><button style={{width:200+"px"}}>Restart</button></Link></div> : <div className='table'><div className='header'>
             <h3>{questions[question].text}</h3>
             </div>
+ 
             <button onClick={() => {check(questions[question].answers[0].isCorrect)}}>{questions[question].answers[0].answer}</button>
             <button onClick={() => {check(questions[question].answers[1].isCorrect)}}>{questions[question].answers[1].answer}</button>
             <button onClick={() => {check(questions[question].answers[2].isCorrect)}}>{questions[question].answers[2].answer}</button>
